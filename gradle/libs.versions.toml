@@ -1,0 +1,19 @@
+[versions]
+agp = "8.7.3"
+appcompatV7 = "27.1.1"
+constraintLayout = "1.1.0"
+espressoCore = "3.0.2"
+junit = "4.12"
+runner = "1.0.2"
+
+[libraries]
+appcompat-v7 = { module = "com.android.support:appcompat-v7", version.ref = "appcompatV7" }
+constraint-layout = { module = "com.android.support.constraint:constraint-layout", version.ref = "constraintLayout" }
+espresso-core = { module = "com.android.support.test.espresso:espresso-core", version.ref = "espressoCore" }
+junit = { module = "junit:junit", version.ref = "junit" }
+recyclerview-v7 = { module = "com.android.support:recyclerview-v7", version.ref = "appcompatV7" }
+runner = { module = "com.android.support.test:runner", version.ref = "runner" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+
