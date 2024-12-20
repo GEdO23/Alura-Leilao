@@ -8,6 +8,7 @@ import java.util.List;
 
 public class LeilaoTest {
 
+    private final double DELTA = 0.0001;
     private final Leilao CONSOLE = new Leilao("Console");
     private final Usuario ALEX = new Usuario("Alex");
     
@@ -29,7 +30,7 @@ public class LeilaoTest {
 
         double maiorLanceDevolvido = CONSOLE.getMaiorLance();
         
-        assertEquals(200.0, maiorLanceDevolvido, 0.0001);
+        assertEquals(200.0, maiorLanceDevolvido, DELTA);
     }
     
     @Test
@@ -39,7 +40,7 @@ public class LeilaoTest {
 
         double maiorLanceDevolvido = CONSOLE.getMaiorLance();
 
-        assertEquals(200.0, maiorLanceDevolvido, 0.0001);
+        assertEquals(200.0, maiorLanceDevolvido, DELTA);
     }
 
     @Test
@@ -49,7 +50,7 @@ public class LeilaoTest {
 
         double maiorLanceDevolvido = CONSOLE.getMaiorLance();
 
-        assertEquals(10000.0, maiorLanceDevolvido, 0.0001);
+        assertEquals(10000.0, maiorLanceDevolvido, DELTA);
     }
     
     @Test
@@ -58,7 +59,7 @@ public class LeilaoTest {
 
         double menorLanceDevolvido = CONSOLE.getMenorLance();
 
-        assertEquals(200.0, menorLanceDevolvido, 0.0001);
+        assertEquals(200.0, menorLanceDevolvido, DELTA);
     }
     
     @Test
@@ -68,7 +69,7 @@ public class LeilaoTest {
 
         double menorLanceDevolvido = CONSOLE.getMenorLance();
 
-        assertEquals(100.0, menorLanceDevolvido, 0.0001);
+        assertEquals(100.0, menorLanceDevolvido, DELTA);
     }
 
     @Test
@@ -78,7 +79,7 @@ public class LeilaoTest {
 
         double menorLanceDevolvido = CONSOLE.getMenorLance();
 
-        assertEquals(9000.0, menorLanceDevolvido, 0.0001);
+        assertEquals(9000.0, menorLanceDevolvido, DELTA);
     }
     
     @Test
@@ -91,5 +92,8 @@ public class LeilaoTest {
         List<Lance> tresMaioresLancesDevolvidos = CONSOLE.tresMaioresLances();
         
         assertEquals(3, tresMaioresLancesDevolvidos.size());
+        assertEquals(400.0, tresMaioresLancesDevolvidos.get(0).getValor(), DELTA);
+        assertEquals(300.0, tresMaioresLancesDevolvidos.get(1).getValor(), DELTA);
+        assertEquals(200.0, tresMaioresLancesDevolvidos.get(2).getValor(), DELTA);
     }
 }
