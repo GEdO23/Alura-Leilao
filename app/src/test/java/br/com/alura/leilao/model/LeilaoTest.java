@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import java.util.List;
+
 public class LeilaoTest {
 
     private final Leilao CONSOLE = new Leilao("Console");
@@ -77,5 +79,17 @@ public class LeilaoTest {
         double menorLanceDevolvido = CONSOLE.getMenorLance();
 
         assertEquals(9000.0, menorLanceDevolvido, 0.0001);
+    }
+    
+    @Test
+    public void deve_devolverTresMaioresLances_quandoRecebeExatosTresLances() {
+        CONSOLE.propoe(new Lance(ALEX, 200.00));
+        CONSOLE.propoe(new Lance(new Usuario("Fran"), 300));
+        CONSOLE.propoe(new Lance(ALEX, 400.0));
+        
+        // Teste Driven Development
+        List<Lance> tresMaioresLancesDevolvidos = CONSOLE.tresMaioresLances();
+        
+        assertEquals(3, tresMaioresLancesDevolvidos.size());
     }
 }
